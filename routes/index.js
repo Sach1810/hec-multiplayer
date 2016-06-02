@@ -10,11 +10,11 @@ router.get('/games', function(req, res, next) {
   res.render('games');
 });
 
-router.get('/rotatingCubes/single', function(req, res, next) {
+router.get('/rotating-cubes/single', function(req, res, next) {
   res.render('rotatingCubesSingle');
 });
 
-router.get('/rotatingCubes/single/phone', function(req, res, next) {
+router.get('/rotating-cubes/single/phone', function(req, res, next) {
   res.render('rotatingCubesSinglePhone');
 });
 

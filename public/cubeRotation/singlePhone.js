@@ -5,12 +5,11 @@ var move = function(id){
 };
 
 window.ondeviceorientation = function(event) {
-          console.log(event);
-          alpha = Math.round(event.alpha);
-          beta = Math.round(event.beta);
-          gamma = Math.round(event.gamma);
+  alpha = Math.round(event.alpha);
+  beta = Math.round(event.beta);
+  gamma = Math.round(event.gamma);
        
-       var coordinates = {'bx':beta, 'gy':gamma, 'az':alpha}
+  var coordinates = {'bx':beta, 'gy':gamma, 'az':alpha}
 
     // send data over the socket
     socket.emit('acceleration',coordinates); 

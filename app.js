@@ -66,9 +66,9 @@ app.io.on('connection', function(socket){
     app.io.emit('moved',id);
   });
 
-   //  socket.on('acceleration', function(data){
-   //    app.io.emit('phoneData',data);
-   //  });
+  socket.on('acceleration', function(data){
+      app.io.emit('phoneData',data);
+  });
 
    //   socket.on('trigger', function(trig){
    //    console.log("hi");

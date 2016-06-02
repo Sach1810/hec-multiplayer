@@ -1,16 +1,16 @@
 var socket = io();
 
-var phoneLink = "https://hec.herokuapp.com/rotating-cubes-phone";
+var phoneLink = "https://475ef917.ngrok.io/rotating-cubes/single/phone";
 
 var id;
 var computerId;
 var phoneId;
 
 var countInterval = 1;
-var startTime = 4
+var startTime = 3;
 var countdownTime = startTime;
 
-var gameDuration = 3;
+var gameDuration = 10;
 var totalPlayingTime = gameDuration;
 
 var squareChangeSpeed = 1000;
@@ -93,7 +93,7 @@ socket.on('phoneData', function(coordinates){
       'rotateY(' + coordinates.gy + 'deg) ' +
       'rotateZ(' + coordinates.bx + 'deg)';
 });
-
+  $("#countdown").html(countdownTime);
   inPlay = true;
   countdown();
 };
@@ -104,10 +104,8 @@ var countdown = function(){
     $("#countdown").html(countdownTime);
 
     if (countdownTime === 0) {
-      $("#openingScreen").addClass('hide');
-      $("#countdown").addClass('hide');
-      $("#do-results").removeClass('hide');
-      $("#gameEnd").removeClass('hide');
+      $(".countdown").addClass('hide');
+      $("#allCubes").removeClass('hide');
       
       clearInterval(timeTillStart);
       
@@ -119,6 +117,7 @@ var countdown = function(){
     
 var startGameOne = function() {
   inPlay = true;
+  $('.liveScore').removeClass('hide');
   gameTime();
 
   var changeSquares = setInterval(function(){
@@ -150,10 +149,8 @@ var startGameOne = function() {
 
   setTimeout(function(){
     clearInterval(changeSquares);
-    $("#do-results").addClass('hide');
-    $("#openingScreen").removeClass('hide');
-    $(".gameEnd").removeClass('hide');
-    
+    $("#allCubes").addClass('hide');
+    $('.liveScore').addClass('hide');
     reset();
 
   }, totalPlayingTime * 1000);
@@ -178,9 +175,10 @@ var reset = function(){
   inPlay = false;
   countdownTime = startTime;
   totalPlayingTime = gameDuration;
-
+  $("#endGame").removeClass('hide');
   $("#gameTime").html(" ");
   $("#countdown").html(" ");
+
 
 
 };
