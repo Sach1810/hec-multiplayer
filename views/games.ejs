@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HEC</title>
+    <link rel="stylesheet" type="text/css" href="/general/nav/nav.css"/>
+    <link rel='stylesheet' href='/general/style.css' />
+    <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css"/>
+    
+    
+
+  </head>
+  <body>
+    <nav id="main-nav">
+      <div id="logo-container">
+        <a class="logo" href="/">HEC</a>
+        <link href='https://fonts.googleapis.com/css?family=Ubuntu:700|Vollkorn' rel='stylesheet' type='text/css'>
+        </div>
+          <div id="links-container">
+          <ul>
+            <li><a href="#" ontouchend="this.onclick=fix">About</a></li>
+            <li><a href="/games" ontouchend="this.onclick=fix">Games</a></li>
+            <li><a href="#" ontouchend="this.onclick=fix">Blog</a></li>
+          </ul>
+        </div>
+        <div id="social-links-container">
+          <ul>
+            <li><a href="#" ontouchend="this.onclick=fix"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+            <li><a href="#" ontouchend="this.onclick=fix"><i class="fa fa-twitter" aria-hidden="true"></i></a></li> 
+          </ul>  
+        </div>
+        <div id="mobile-button-container">
+          <a ontouchend="this.onclick=fix"><i id="bars" class="fa fa-bars" aria-hidden="true"></i>      
+        </div>
+    </nav>
+    <nav id="mobile-nav">
+      <ul id="mobile-links">
+        <li><a href="#" ontouchend="this.onclick=fix">About</a></li>
+        <li><a href="/games" ontouchend="this.onclick=fix">Games</a></li>
+        <li><a href="#" ontouchend="this.onclick=fix">Blog</a></li>
+        <li>
+          <ul id="mobile-social-links">
+            <li><a href="#" ontouchend="this.onclick=fix"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+            <li><a href="#" ontouchend="this.onclick=fix"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+<!-- ********** END NAV ********** -->
+    <div class="gameIntro hide">
+      <a class="close" onclick="hide();">Close</a>
+    </div>
+    <div id="games">
+     <a class="link" onclick="intro();"><div class="gameContainer">
+        <div class="gameImage">Insert Image here</div>
+        <div class="gameText"><h1>Rotating Cubes</h1><br><p>Hold the controller flat and click as many green cubes as possible. Be careful there is a penalty for missing</p></div>
+    </div></a>
+    <a href="#" class="link"><div class="gameContainer">
+        <div class="gameImage">Insert Image here</div>
+        <div class="gameText"><h1>Coming Soon</h1><br><p>A really cool and exciting game</p></div>
+    </div></a>
+    <a href="#" class="link"><div class="gameContainer">
+        <div class="gameImage">Insert Image here</div>
+        <div class="gameText"><h1>Coming Soon</h1><br><p>A really cool and exciting game</p></div>
+    </div></a>
+    </div> <!-- *****End game****** -->
+    <script type="text/javascript" src="jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="/general/nav/nav.js"></script>
+    <script type="text/javascript" src="/general/main.js"></script>
+  </body>
+</html>

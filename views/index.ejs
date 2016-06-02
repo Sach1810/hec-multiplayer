@@ -1,11 +1,63 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title>HEC</title>
+    <link rel="stylesheet" type="text/css" href="/general/nav/nav.css"/>
+    <link rel='stylesheet' href='/general/style.css' />
+    <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css"/>
+    <script type="text/javascript" src="jquery/dist/jquery.min.js"></script>
+    
+
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <nav id="main-nav">
+      <div id="logo-container">
+        <a class="logo" href="/">HEC</a>
+        <link href='https://fonts.googleapis.com/css?family=Ubuntu:700|Vollkorn' rel='stylesheet' type='text/css'>
+        </div>
+          <div id="links-container">
+          <ul>
+            <li><a href="#" ontouchend="this.onclick=fix">About</a></li>
+            <li><a href="/games" ontouchend="this.onclick=fix">Games</a></li>
+            <li><a href="#" ontouchend="this.onclick=fix">Blog</a></li>
+          </ul>
+        </div>
+        <div id="social-links-container">
+          <ul>
+            <li><a href="#" ontouchend="this.onclick=fix"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+            <li><a href="#" ontouchend="this.onclick=fix"><i class="fa fa-twitter" aria-hidden="true"></i></a></li> 
+          </ul>  
+        </div>
+        <div id="mobile-button-container">
+          <a ontouchend="this.onclick=fix"><i id="bars" class="fa fa-bars" aria-hidden="true"></i>      
+        </div>
+    </nav>
+    <nav id="mobile-nav">
+      <ul id="mobile-links">
+        <li><a href="#" ontouchend="this.onclick=fix">About</a></li>
+        <li><a href="/games" ontouchend="this.onclick=fix">Games</a></li>
+        <li><a href="#" ontouchend="this.onclick=fix">Blog</a></li>
+        <li>
+          <ul id="mobile-social-links">
+            <li><a href="#" ontouchend="this.onclick=fix"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+            <li><a href="#" ontouchend="this.onclick=fix"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+<!-- ********** END NAV ********** -->
+    <a href="/games"><div id="banner"><div id="bannerText"><h1>See All Games<br><p>click here</p></h1></div></div></a>
+    <div class="container">
+      <h1>Latest Games</h1>
+      <div class="container">
+        <div class="latest centering"></div>
+        <div class="latest margin"></div>
+        <div class="latest"></div>
+      </div>
+    </div>
+
+
+
+    <script type="text/javascript" src="/general/nav/nav.js"></script>
   </body>
 </html>
