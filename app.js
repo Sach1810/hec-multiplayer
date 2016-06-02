@@ -70,11 +70,25 @@ app.io.on('connection', function(socket){
       app.io.emit('phoneData',data);
   });
 
-   //   socket.on('trigger', function(trig){
-   //    console.log("hi");
-   //    app.io.emit('trigger',trig);
-   //  });
+  socket.on('newMoveOne', function (id){
+    console.log("one");
+    app.io.emit('movedOne',id);
+  });
 
+  socket.on('accelerationOne', function(data){
+    console.log("zzzzzone");
+      app.io.emit('phoneDataOne',data);
+  });
+
+    socket.on('newMoveTwo', function (id){
+      console.log("two");
+    app.io.emit('movedTwo',id);
+  });
+
+  socket.on('accelerationTwo', function(data){
+    console.log("zzztwo");
+      app.io.emit('phoneDataTwo',data);
+  });
 
 });
 

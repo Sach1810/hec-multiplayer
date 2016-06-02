@@ -1,39 +1,57 @@
 var socket = io();
 
-var phoneLink = "https://hec.herokuapp.com/rotating-cubes/single/phone";
+var phoneLinkOne = "https://475ef917.ngrok.io/rotating-cubes/single/phone/player-1";
+var phoneLinkTwo = "https://475ef917.ngrok.io/rotating-cubes/single/phone/player-2";
 
 var id;
-var computerId;
-var phoneId;
+var computerId1;
+var phoneId1;
+
+var computerId2;
+var phoneId2;
+
 
 var countInterval = 1;
 var startTime = 3;
 var countdownTime = startTime;
 
-var gameDuration = 10;
+var gameDuration = 30;
 var totalPlayingTime = gameDuration;
 
 var squareChangeSpeed = 1000;
 var inPlay = false;
 
-var score = 0;
-var right = 0;
-var wrong = 0;
+var scoreOne = 0;
+var rightOne = 0;
+var wrongOne = 0;
+
+var scoreTwo = 0;
+var rightTwo = 0;
+var wrongTwo = 0;
 
 
-$("#webAddress").html(phoneLink);
+$("#webAddressOne").html(phoneLinkOne);
 
-$('#qrcode').qrcode({
+
+$('#qrcodeOne').qrcode({
   "size": 100,
   "color": "#3a3",
-  "text": phoneLink});
+  "text": phoneLinkOne});
+
+$("#webAddressTwo").html(phoneLinkTwo);
+  
+$('#qrcodeTwo').qrcode({
+  "size": 100,
+  "color": "#3a3",
+  "text": phoneLinkTwo});
+
 
 var rotatingCubes = function(){
   $(".gameIntro").addClass("hide");
   $(".countdown").removeClass("hide");
   $("#endGame").addClass('hide');
 
-socket.on('moved', function(id){
+socket.on('movedOne', function(id){
   console.log(id);
   phoneId = id;
   var maxPoints = 0;
@@ -41,21 +59,43 @@ socket.on('moved', function(id){
   if (inPlay) {
     if (computerId === phoneId && maxPoints === 0) {
       maxPoints ++;
-      score ++;
-      right ++;
+      scoreOne ++;
+      rightOne ++;
 
-      $("#right").html(right);
+      $("#oneRight").html(rightOne);
     } else {
-      score -= 0.5;
-      wrong ++;
-      $("#wrong").html(wrong);
+      scoreOne -= 0.5;
+      wrongOne ++;
+      $("#oneWrong").html(wrongOne);
     };
-    $("#score").html(score);
+    $("#oneScore").html(scoreOne);
   }
 
 });
 
-socket.on('phoneData', function(coordinates){
+socket.on('movedTwo', function(id){
+  console.log(id);
+  phoneId = id;
+  var maxPoints = 0;
+  
+  if (inPlay) {
+    if (computerId === phoneId && maxPoints === 0) {
+      maxPoints ++;
+      scoreTwo ++;
+      rightTwo ++;
+
+      $("#twoRight").html(rightTwo);
+    } else {
+      scoreTwo -= 0.5;
+      wrongTwo ++;
+      $("#twoWrong").html(wrongTwo);
+    };
+    $("#twoScore").html(scoreTwo);
+  }
+
+});
+
+socket.on('phoneDataOne', function(coordinates){
 
   document.getElementById('cubeOne').style.webkitTransform = 
     document.getElementById('cubeOne').style.transform =
@@ -94,6 +134,47 @@ socket.on('phoneData', function(coordinates){
       'rotateY(' + coordinates.gy + 'deg) ' +
       'rotateZ(' + coordinates.bx + 'deg)';
 });
+
+socket.on('phoneDataTwo', function(coordinates){
+
+  document.getElementById('cubeOne').style.webkitTransform = 
+    document.getElementById('cubeOne').style.transform =
+      'rotateX(' + coordinates.az + 'deg) ' +
+      'rotateY(' + coordinates.gy + 'deg) ' +
+      'rotateZ(' + coordinates.bx + 'deg)';
+
+
+  document.getElementById('cubeTwo').style.webkitTransform = 
+    document.getElementById('cubeTwo').style.transform =
+      'rotateX(' + coordinates.az + 'deg) ' +
+      'rotateY(' + coordinates.gy + 'deg) ' +
+      'rotateZ(' + coordinates.bx + 'deg)';
+
+  document.getElementById('cubeThree').style.webkitTransform = 
+    document.getElementById('cubeThree').style.transform =
+      'rotateX(' + coordinates.az + 'deg) ' +
+      'rotateY(' + coordinates.gy + 'deg) ' +
+      'rotateZ(' + coordinates.bx + 'deg)';
+
+  document.getElementById('cubeFour').style.webkitTransform = 
+    document.getElementById('cubeFour').style.transform =
+      'rotateX(' + coordinates.az + 'deg) ' +
+      'rotateY(' + coordinates.gy + 'deg) ' +
+      'rotateZ(' + coordinates.bx + 'deg)';
+
+  document.getElementById('cubeFive').style.webkitTransform = 
+    document.getElementById('cubeFive').style.transform =
+      'rotateX(' + coordinates.az + 'deg) ' +
+      'rotateY(' + coordinates.gy + 'deg) ' +
+      'rotateZ(' + coordinates.bx + 'deg)';
+
+  document.getElementById('cubeSix').style.webkitTransform = 
+    document.getElementById('cubeSix').style.transform =
+      'rotateX(' + coordinates.az + 'deg) ' +
+      'rotateY(' + coordinates.gy + 'deg) ' +
+      'rotateZ(' + coordinates.bx + 'deg)';
+});
+
   $("#countdown").html(countdownTime);
   inPlay = true;
   countdown();
@@ -152,12 +233,19 @@ var startGameOne = function() {
     clearInterval(changeSquares);
     $("#allCubes").addClass('hide');
     $('.liveScore').addClass('hide');
-  var r = right;
-  var w = wrong;
-  var s = score; 
-  $("#fRight").html(r);
-  $("#fWrong").html(w);
-  $("#fScore").html(s);
+  var r1 = rightOne;
+  var w1 = wrongOne;
+  var s1 = scoreOne; 
+  $("#fRightOne").html(r1);
+  $("#fWrongOne").html(w1);
+  $("#fScoreOne").html(s1);
+
+  var r2 = rightTwo;
+  var w2 = wrongTwo;
+  var s2 = scoreTwo; 
+  $("#fRightTwo").html(r2);
+  $("#fWrongTwo").html(w2);
+  $("#fScoreTwo").html(s2);
 
     reset();
 

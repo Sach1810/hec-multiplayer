@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>HEC</title>
+    <title>HEC-Multi</title>
     <link rel='stylesheet' href='/general/style.css'/>
     <link rel='stylesheet' href='/cubeRotation/cubeRotation.css'/>
   </head>
@@ -12,8 +12,13 @@
       <p>Hold the controller flat and click as many green cubes as possible. Be careful there is a penalty for missing</p>
       
       <div class="phoneLink">
-        <div id="qrcode"></div>
-        <div id="webAddress"></div>
+        <div id="qrcodeOne"></div>
+        <div id="webAddressOne"></div>
+      </div>
+
+      <div class="phoneLink">
+        <div id="qrcodeTwo"></div>
+        <div id="webAddressTwo"></div>
       </div>
       
       <div class="playerBtn">
@@ -30,9 +35,16 @@
       <a href="#" onclick="rotatingCubes();">restart</a>
 
       <div>Final Results: 
-        <div>Score: <div id="fScore"></div></div>
-        <div>Right: <div id="fRight"></div></div>
-        <div>Wrong: <div id="fWrong"></div></div>
+        <div>Player One</div>
+        <div>Score: <div id="fScoreOne"></div></div>
+        <div>Right: <div id="fRightOne"></div></div>
+        <div>Wrong: <div id="fWrongOne"></div></div>
+
+        <div>Player Two</div>
+        <div>Score: <div id="fScoreTwo"></div></div>
+        <div>Right: <div id="fRightTwo"></div></div>
+        <div>Wrong: <div id="fWrongTwo"></div></div>
+
       </div>
     </div>
 
@@ -94,9 +106,15 @@
 
     <div class="liveScore hide">
       <div>Time Left:<div id="gameTime"></div></div>
-      <div>Score<div id="score">0</div></div>
-      <div>Right:<div id="right">0</div></div>
-      <div>Wrong<div id="wrong">0</div></div>
+      <div>Player One</div>
+      <div>Score<div id="oneScore">0</div></div>
+      <div>Right:<div id="oneRight">0</div></div>
+      <div>Wrong<div id="oneWrong">0</div></div>
+
+      <div> Player Two</div>
+        <div>Score<div id="twoScore">0</div></div>
+        <div>Right:<div id="twoRight">0</div></div>
+        <div>Wrong<div id="twoWrong">0</div></div>
     </div>
 
 
@@ -104,7 +122,8 @@
     <script type="text/javascript" src="/general/nav/nav.js"></script>
     <script src="/socket.io/socket.io.js"></script>
     <script src="/libraries/jquery-qrcode-0.14.0/jquery-qrcode-0.14.0.min.js"></script>
-    <script type="text/javascript" src="/cubeRotation/single.js"></script>
+    <script type="text/javascript" src="/cubeRotation/twoPlayers.js"></script>
+  
 
   </body>
 </html>
