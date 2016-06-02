@@ -10,7 +10,7 @@ var countInterval = 1;
 var startTime = 3;
 var countdownTime = startTime;
 
-var gameDuration = 10;
+var gameDuration = 30;
 var totalPlayingTime = gameDuration;
 
 var squareChangeSpeed = 1000;
