@@ -1,7 +1,7 @@
 var socket = io();
 
-var phoneLinkOne = "https://475ef917.ngrok.io/rotating-cubes/single/phone/player-1";
-var phoneLinkTwo = "https://475ef917.ngrok.io/rotating-cubes/single/phone/player-2";
+var phoneLinkOne = "https://hec.herokuapp.com/rotating-cubes/single/phone/player-1";
+var phoneLinkTwo = "https://hec.herokuapp.com/rotating-cubes/single/phone/player-2";
 
 var id;
 var computerId1;
