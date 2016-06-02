@@ -1,0 +1,29 @@
+.phoneLink {
+/*  float:left;*/
+  font-size: 2em;
+  margin-bottom: 25%;
+}
+
+#qrcode {
+  padding: 1vw;
+  float: left;
+}
+
+#webAddress {
+ font-size: 0.5em;
+}
+
+
+
+/******Phone CSS******/
+.pSquare {
+  display:inline-block;
+  height: 50vh;
+  width: 32vw;
+  background: #000;
+}
+
+#countdown {
+  padding-left: 35vw;
+  font-size: 50vh;
+}

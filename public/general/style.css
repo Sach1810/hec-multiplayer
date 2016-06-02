@@ -133,3 +133,27 @@ p {
   padding:1vh;
 }
 
+.gameIntro p {
+padding:3vh;
+}
+
+.playerBtn {
+  border: 5px solid #000;
+  margin-bottom: 2vh;
+  padding: 2vh;
+  margin: 5vw;
+}
+
+.playerBtn h1{
+  font-size:5vh;
+}
+
+.playerBtn a{
+  text-decoration: none;
+  color: #000;
+}
+
+.playerBtn a:hover {
+  color: red;
+}
+
